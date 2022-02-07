@@ -23,3 +23,13 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+/**
+ * Handling Keyboard events, keyboard events are gloabl
+ * event, so they must be handled on the entire document
+ */
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
